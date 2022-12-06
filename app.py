@@ -8,7 +8,7 @@ import pickle
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-app.config['MONGO_URI'] = 'mongodb+srv://mongodb:salman@cluster0.yfhex.mongodb.net/mydb?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = 'mongodb+srv://mongodb:salman@cluster0.yfhex.mongodb.net/mydatabase?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 newdb = mongo.db.newdb
@@ -72,7 +72,9 @@ def predict():
 if __name__ == '__main__':
     app.run(debug=True)
 
-
+#if __name__ == '__main__':
+    #app
+    #.run(host='0.0.0.0',port=8080)
 
 
 
